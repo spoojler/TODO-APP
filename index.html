@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Przerewa do 12:40 -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO-DO list app</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark bg-dark mb-4">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">TO-DO List</span>
+        <button class="btn btn-primary" id="signOutButton">Sign Out</button>
+      </div>
+    </nav>
+
+    <div class="container">
+      <button
+        class="btn btn-success"
+        data-bs-toggle="modal"
+        data-bs-target="#addTaskModal"
+      >
+        Add task
+      </button>
+
+      <ol
+        class="list-group list-group-numbered mt-2 mt-md-5 mb-4"
+        id="tasksList"
+      ></ol>
+    </div>
+
+    <div
+      class="modal fade"
+      id="addTaskModal"
+      tabindex="-1"
+      aria-labelledby="addTaskModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="addTaskModalLabel">
+              Create new task
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="addForm" validate>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  placeholder="Enter name of the task"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="deadline" class="form-label">Deadline:</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  name="deadline"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="attachment" class="form-label">Attachment:</label>
+                <input type="file" class="form-control" name="attachment" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="submit" form="addForm" class="btn btn-success">
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="editTaskModal"
+      tabindex="-1"
+      aria-labelledby="editTaskModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="editTaskModalLabel">Edit task</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="editForm" validate>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  placeholder="Enter name of the task"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="deadline" class="form-label">Deadline:</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  name="deadline"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="order" class="form-label">Order:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  name="order"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="attachment" class="form-label">Attachment:</label>
+                <input type="file" class="form-control" name="attachment" />
+              </div>
+              <input type="hidden" name="taskId" />
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="submit" form="editForm" class="btn btn-success">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
