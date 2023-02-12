@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO-DO list app</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark bg-dark mb-4">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">TO-DO List</span>
+        <button class="btn btn-primary" id="signOutButton">Sign Out</button>
+      </div>
+    </nav>
+
+    <div class="container">
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addTaskModal">Add task</button>
+      <ol class="list-group list-group-numbered mt-2 mt-md-5 mb-4" id="tasksList"></ul>
+
+      
+    </div>
+
+
+
+  <div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Create new task</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="addForm">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name:</label>
+          <input
+            type="text"
+            name="name"
+            class="form-control"
+            placeholder="Enter name of the task"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="deadline" class="form-label">Deadline:</label>
+          <input type="date" class="form-control" name="deadline" />
+        </div>
+        <div class="mb-3">
+          <label for="attachment" class="form-label">Attachment:</label>
+          <input type="file" class="form-control" name="attachment" />
+        </div>
+        </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" form="addForm" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
